@@ -1,5 +1,8 @@
 # Nitro Generator + Checker
-## Generate a certain amount of nitro codes and check them at the same time !
+## Generate a certain amount of nitro codes and check them at the same time.
+
+![preview](https://cdn.discordapp.com/attachments/810907384779112489/813941805619347456/Screenshot_2021-02-23_at_11.37.26_AM.png)
+
 
 Setup:
 - Download `main.py` & `Nitro Codes.txt`; open the file (or put in repl.it or VS code)
