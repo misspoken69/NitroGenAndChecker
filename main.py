@@ -22,30 +22,30 @@ class NitroGen: # Initialise the class
 ░      ░    ▒ ░░  ░  ░  ░  ░  ░  ░░       ░ ░ ░ ▒  ░ ░░ ░    ░      ░   ░ ░ 
        ░    ░        ░        ░               ░ ░  ░  ░      ░  ░         ░ 
                                                                             
-                                                        """) # Print the title card
-        time.sleep(2) # Wait a few seconds
-        self.slowType("Made by Misspoken#1122", .02) # Print who developed the code
-        time.sleep(1) # Wait a little more
-        self.slowType("\nInput How Many Codes to Generate and Check: ", .02, newLine = False) # Print the first question
+                                                        """)
+        time.sleep(2)
+        self.slowType("Made by Misspoken#1122", .02)
+        time.sleep(1)
+        self.slowType("\nHow many codes do you want to generate and check?: ", .02, newLine = False)
 
-        num = int(input('')) # Ask the user for the amount of codes
+        num = int(input(''))
 
-        # Get the webhook url, if the user does not wish to use a webhook the message will be an empty string
-        self.slowType("\nDo you want to use a discord webhook? \nIf so type it here or press enter to ignore: ", .02, newLine = False)
+        # Gets a webhook URL
+        self.slowType("\nDo you want to use a webhook? If so put it here: ", .02, newLine = False)
         url = input('') # Get the awnser
-        webhook = url if url != "" else None # If the url is empty make it be None insted
+        webhook = url if url != "" else None
 
-        print() # Print a newline for looks
+        print()
 
-        valid = [] # Keep track of valid codes
-        invalid = 0 # Keep track of how many invalid codes was detected
+        valid = []
+        invalid = 0 
 
-        for i in range(num): # Loop over the amount of codes to check
-            code = "".join(random.choices( # Generate the id for the gift
+        for i in range(num): 
+            code = "".join(random.choices( 
                 string.ascii_uppercase + string.digits + string.ascii_lowercase,
                 k = 16
             ))
-            url = f"https://discord.gift/{code}" # Generate the url
+            url = f"https://discord.gift/{code}" # Beginning of the gift url
 
             result = self.quickChecker(url, webhook) # Check the codes
 
@@ -111,13 +111,13 @@ Results:
                     if notify is not None: # If a webhook has been added
                         DiscordWebhook( # Send the message to discord letting the user know there has been a valid nitro code
                             url = notify,
-                            content = f"Valid Nito Code detected! @everyone \n{nitro}"
+                            content = f"Valid nitro code found! @everyone \n{nitro}"
                         ).execute()
                     else: # If there has not been a discord webhook setup just stop the code
                         break # Stop the loop since a valid code was found
 
                 else: # If the responce got ignored or is invalid ( such as a 404 or 405 )
-                    print(f" Invalid | {nitro} ") # Tell the user it tested a code and it was invalid
+                    print(f" Invalid - {nitro} ") # Tell the user it tested a code and it was invalid
                     invalid += 1 # Increase the invalid counter by one
 
         return {"valid" : valid, "invalid" : invalid} # Return a report of the results
@@ -128,12 +128,12 @@ Results:
         response = requests.get(url) # Get the response from discord
 
         if response.status_code == 200: # If the responce went through
-            print(f" Valid | {nitro} ") # Notify the user the code was valid
+            print(f" Valid  {nitro} ") # Notify the user the code was valid
 
             if notify is not None: # If a webhook has been added
                 DiscordWebhook( # Send the message to discord letting the user know there has been a valid nitro code
                     url = notify,
-                    content = f"Valid Nito Code detected! @everyone \n{nitro}"
+                    content = f"Valid nitro code found! @everyone \n{nitro}"
                 ).execute()
 
             return True # Tell the main function the code was found
