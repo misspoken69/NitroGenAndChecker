@@ -1,18 +1,17 @@
 # Nitro Generator + Checker
-## Generate a certain amount of nitro codes and check them at the same time.
+Generate a certain amount of nitro codes and check them at the same time.
 
-![preview](https://cdn.discordapp.com/attachments/810907384779112489/813941805619347456/Screenshot_2021-02-23_at_11.37.26_AM.png)
-
-
-Setup:
+## Setup
 - Download `main.py` & `Nitro Codes.txt`; open the file (or put in repl.it or VS code)
 - Do the steps it says to do.
 - And you're done! Now it will gen codes and check them and send the working ones.
 
-Pros:
+## Pros
 - Faster way to get nitro.
 - No need to switch between softwares to check & gen.
 - No cracking/hacking envolved!
 
-Help/Credits
+## Help/Credits
 - All credits to me (Misspoken#1122) LOL, DM me if you need help with anything.
+
+![preview](https://cdn.discordapp.com/attachments/810907384779112489/813941805619347456/Screenshot_2021-02-23_at_11.37.26_AM.png)
